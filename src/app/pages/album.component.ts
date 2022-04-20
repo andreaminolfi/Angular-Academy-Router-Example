@@ -6,9 +6,13 @@ import { Photo } from '../model/photo';
 @Component({
   selector: 'app-album',
   template: `
-    <h1>Photos</h1>
+  <h1>Photos</h1>
 
-    <pre>{{photos | json }}</pre>
+  <img *ngFor="let photo of photos" [src]="photo.thumbnailUrl" />
+
+  <hr />
+
+  <button routerLink="/catalog">back</button>
   `,
 })
 export class AlbumComponent {
@@ -18,7 +22,7 @@ export class AlbumComponent {
     const albumId = activatedRoute.snapshot.params.albumId;
     http
       .get<Photo[]>(
-        'https://jsonplaceholder.typicode.com/photos?albumId=${albumId}'
+        `https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`
       )
       .subscribe((res) => (this.photos = res));
   }

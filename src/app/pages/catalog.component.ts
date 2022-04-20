@@ -5,11 +5,11 @@ import { Album } from '../model/album';
 @Component({
   selector: 'app-catalog',
   template: `
-    <h1>Albums</h1>
+  <h1>Albums</h1>
 
-    <li *ngFor="let album of albums" [routerLink]="'/catalog/' + album.id">
-      {{ album.title }}
-    </li>
+  <li *ngFor="let album of albums" [routerLink]="'/catalog/' + album.id">
+    {{ album.title }}
+  </li>
   `,
 })
 export class CatalogComponent {
@@ -17,7 +17,7 @@ export class CatalogComponent {
 
   constructor(private http: HttpClient) {
     this.http
-      .get<Album[]>('https://jsonplaceholder.typicode.com/albums')
+      .get<Album[]>(`https://jsonplaceholder.typicode.com/albums`)
       .subscribe((res) => (this.albums = res));
   }
 }

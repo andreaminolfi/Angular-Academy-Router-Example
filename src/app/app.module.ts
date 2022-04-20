@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login.component';
 import { CatalogComponent } from './pages/catalog.component';
 import { ContactsComponent } from './pages/contacts.component';
 import { AlbumComponent } from './pages/album.component';
+import { PostsComponent } from './pages/posts.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'catalog', component: CatalogComponent },
       { path: 'catalog/:albumId', component: AlbumComponent },
       { path: 'contacts', component: ContactsComponent },
+      { path: 'posts', component: PostsComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ]),
   ],
@@ -31,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContactsComponent,
     CatalogComponent,
     AlbumComponent,
+    PostsComponent,
   ],
   bootstrap: [AppComponent],
 })
