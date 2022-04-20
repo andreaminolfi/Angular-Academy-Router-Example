@@ -12,10 +12,14 @@ import { Photo } from '../model/photo';
   `,
 })
 export class AlbumComponent {
-  photos: Photo[] = [];
+  photos: Photo[];
 
   constructor(activatedRoute: ActivatedRoute, http: HttpClient) {
     const albumId = activatedRoute.snapshot.params.albumId;
-    http.get<Photo[]>('https://jsonplaceholder.typicode.com/photos?albumId=${albumId}').subscribe(res => this.photos = res);
+    http
+      .get<Photo[]>(
+        'https://jsonplaceholder.typicode.com/photos?albumId=${albumId}'
+      )
+      .subscribe((res) => (this.photos = res));
   }
 }
