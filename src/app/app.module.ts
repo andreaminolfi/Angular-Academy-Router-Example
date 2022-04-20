@@ -11,6 +11,7 @@ import { AlbumComponent } from './pages/album.component';
 import { PostsComponent } from './pages/posts.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './pages/post.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'catalog/:albumId', component: AlbumComponent },
       { path: 'contacts', component: ContactsComponent },
       { path: 'posts', component: PostsComponent },
+      { path: 'posts/:postId', component: PostComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ]),
   ],
@@ -34,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     CatalogComponent,
     AlbumComponent,
     PostsComponent,
+    PostComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -7,6 +7,10 @@ import { Post } from '../model/post';
   template: `
     <h1>Posts</h1>
 
+    <li *ngFor="let post of posts" [routerLink]="'/post/' + post.id"
+      {{post.title}}
+    </li>
+
     <pre>{{posts | json }}</pre>
   `,
 })
