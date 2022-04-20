@@ -10,8 +10,6 @@ import { Post } from '../model/post';
     <li *ngFor="let post of posts" [routerLink]="'/posts/' + post.id">
       {{post.title}}
     </li>
-
-    <pre>{{posts | json }}</pre>
   `,
 })
 export class PostsComponent {
