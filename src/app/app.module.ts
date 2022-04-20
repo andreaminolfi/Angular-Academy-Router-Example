@@ -8,13 +8,13 @@ import { LoginComponent } from './pages/login.component';
 import { CatalogComponent } from './pages/catalog.component';
 import { ContactsComponent } from './pages/contacts.component';
 import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClient,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'catalog', component: CatalogComponent },
