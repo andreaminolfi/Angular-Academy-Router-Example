@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { LoginComponent } from './pages/login.component';
 import { CatalogComponent } from './pages/catalog.component';
 import { ContactsComponent } from './pages/contacts.component';
+import { AlbumComponent } from './pages/album.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'catalog', component: CatalogComponent },
+      { path: 'catalog/:albumId', component: AlbumComponent },
       { path: 'contacts', component: ContactsComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ]),
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ContactsComponent,
     CatalogComponent,
+    AlbumComponent,
   ],
   bootstrap: [AppComponent],
 })
